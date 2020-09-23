@@ -1,0 +1,42 @@
+[*] Creating vectorized features
+WARNING: EMBER feature version 1 were computed using lief version 0.8.3-18d5b75
+WARNING:   lief version 0.9.0- found instead. There may be slight inconsistencies
+WARNING:   in the feature calculations.
+Vectorizing training set
+100%|███████████████████████████████████████████████████████████████████████| 900000/900000 [06:47<00:00, 2206.05it/s]
+Vectorizing test set
+100%|███████████████████████████████████████████████████████████████████████| 200000/200000 [01:29<00:00, 2227.97it/s]
+[*] training: read vectorized features
+WARNING: EMBER feature version 1 were computed using lief version 0.8.3-18d5b75
+WARNING:   lief version 0.9.0- found instead. There may be slight inconsistencies
+WARNING:   in the feature calculations.
+[*] testing: read vectorized features
+WARNING: EMBER feature version 1 were computed using lief version 0.8.3-18d5b75
+WARNING:   lief version 0.9.0- found instead. There may be slight inconsistencies
+WARNING:   in the feature calculations.
+900000
+False
+Building neural network
+2020-09-23 16:18:20.963946: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-09-23 16:18:20.985715: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3999980000 Hz
+2020-09-23 16:18:20.986048: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x565097fa6050 executing computations on platform Host. Devices:
+2020-09-23 16:18:20.986060: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+Compiling neural network
+Training neural network...
+Traceback (most recent call last):
+  File "main.py", line 93, in <module>
+    validation_data=(x_test, y_test)
+  File "/home/yongbak/anaconda3/envs/malware_detector/lib/python3.6/site-packages/tensorflow_core/python/keras/engine/training.py", line 728, in fit
+    use_multiprocessing=use_multiprocessing)
+  File "/home/yongbak/anaconda3/envs/malware_detector/lib/python3.6/site-packages/tensorflow_core/python/keras/engine/training_v2.py", line 224, in fit
+    distribution_strategy=strategy)
+  File "/home/yongbak/anaconda3/envs/malware_detector/lib/python3.6/site-packages/tensorflow_core/python/keras/engine/training_v2.py", line 547, in _process_training_inputs
+    use_multiprocessing=use_multiprocessing)
+  File "/home/yongbak/anaconda3/envs/malware_detector/lib/python3.6/site-packages/tensorflow_core/python/keras/engine/training_v2.py", line 594, in _process_inputs
+    steps=steps)
+  File "/home/yongbak/anaconda3/envs/malware_detector/lib/python3.6/site-packages/tensorflow_core/python/keras/engine/training.py", line 2472, in _standardize_user_data
+    exception_prefix='input')
+  File "/home/yongbak/anaconda3/envs/malware_detector/lib/python3.6/site-packages/tensorflow_core/python/keras/engine/training_utils.py", line 574, in standardize_input_data
+    str(data_shape))
+ValueError: Error when checking input: expected dense_input to have shape (2381,) but got array with shape (2351,)
+

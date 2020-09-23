@@ -23,7 +23,8 @@ def main():
     if not (os.path.exists(X_train_path) and os.path.exists(y_train_path)):
         print("Creating vectorized features")
         ember.create_vectorized_features(args.datadir, args.featureversion)
-
+    else:
+        print("No available train paths")
     params = {
         "boosting": "gbdt",
         "objective": "binary",
